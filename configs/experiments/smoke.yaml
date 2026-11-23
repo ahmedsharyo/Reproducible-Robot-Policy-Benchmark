@@ -1,0 +1,22 @@
+run_id: smoke
+output_dir: results
+environment:
+  backend: numpy
+  max_steps: 40
+  action_scale: 0.05
+  goal_radius: 0.06
+data:
+  episodes: 48
+  seed: 20261031
+  train_fraction: 0.7
+  validation_fraction: 0.15
+training:
+  training_seeds: [11, 23, 37]
+  epochs: 35
+  batch_size: 64
+  learning_rate: 0.001
+  hidden_sizes: [128, 128]
+evaluation:
+  episodes: 30
+  seeds: [9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030]
+  max_steps: 40

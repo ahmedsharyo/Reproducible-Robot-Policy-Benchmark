@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robot-policy-benchmark"
+version = "0.1.0"
+description = "Reproducible local benchmarks for robot manipulation policies"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "PyYAML>=6", "torch>=2.2"]
+
+[project.optional-dependencies]
+mujoco = ["mujoco>=3.1", "gymnasium>=0.29"]
+analysis = ["pandas>=2", "matplotlib>=3.8"]
+robomimic = ["robomimic>=0.3.0"]
+lerobot = ["lerobot"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+robot-benchmark = "robot_benchmark.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
